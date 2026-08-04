@@ -1,3 +1,4 @@
+
 fun main(){
     val bankUMN = Bank()
     println("Selamat datang di Bank UMN")
@@ -17,6 +18,7 @@ fun main(){
     
     while (true){
         println("Welcome ${user.name}")
+        user.showBalance()
         
         println("MENU\n 1. Transfer\n 2. Withdraw\n 3. Deposit\n 4. Exit")
         
@@ -28,7 +30,24 @@ fun main(){
         }
         
         if (choice == "1"){
-            print("Destination NIM : ")
+            println("Destination NIM : ")
+            val destinationNim = readLine() ?: ""
+            val receiver = bankUMN.findAccount(destinationNim)
+            
+            if (receiver != null){
+                print("Amount : ")
+                val inputAmount : Int = readLine()?.toIntOrNull() ?: 0
+                if(user.transfer(receiver, inputAmount)){
+                    println("Transfer Success")
+                }
+                else{
+                    println("Transfer Failed. Make sure the amount is correct")
+                }
+                
+            }
+            else{
+                println("No account is found")
+            }
         }
         
     }
