@@ -11,4 +11,12 @@ class Bank{
         return accounts.find { it.nim == inputNim }
     }
 
+    fun login(inputNim: String, inputPassword: String) : Account?{
+        for (account in accounts) {
+            if (account.login(inputNim, inputPassword)) {
+                return account
+            }
+        }
+        return null
+    }
 }
