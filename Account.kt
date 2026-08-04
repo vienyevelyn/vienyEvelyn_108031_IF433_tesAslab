@@ -10,4 +10,16 @@ class Account(
         }
         return false
     }
+    fun deposit(inputAmount : Int){
+        
+        if (inputAmount > 0){
+            balance += inputAmount
+            println("Desposit Success")
+        }
+        else{
+            println("Deposit Failed")
+        }
+        println("Your Balance ${balance}")
+        
+    }
 }
