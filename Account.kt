@@ -5,7 +5,7 @@ class Account(
     private var balance: Int = 100000
 ){
     fun login(inputNim: String, inputPassword: String) : Boolean{
-        if (inputNim == password && inputPassword == password){
+        if (inputNim == nim && inputPassword == password){
             return true
         }
         return false
