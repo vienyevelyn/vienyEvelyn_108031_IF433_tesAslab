@@ -15,7 +15,23 @@ fun main(){
         return
     }
     
-   
+    while (true){
+        println("Welcome ${user.name}")
+        
+        println("MENU\n 1. Transfer\n 2. Withdraw\n 3. Deposit\n 4. Exit")
+        
+        println("Masukkan opsi: ")
+        var choice= readLine() ?: "4"
+        if (choice == "4"){
+            println("You have exited the program")
+            break
+        }
+        
+        if (choice == "1"){
+            print("Destination NIM : ")
+        }
+        
+    }
    
     
 }
