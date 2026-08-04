@@ -1,4 +1,3 @@
-
 fun main(){
     val bankUMN = Bank()
     println("Selamat datang di Bank UMN")
@@ -34,7 +33,7 @@ fun main(){
             val destinationNim = readLine() ?: ""
             val receiver = bankUMN.findAccount(destinationNim)
             if (receiver == user){
-                prinln("You can't transfer to your own account")
+                println("You can't transfer to your own account")
             }
             else if (receiver != null){
                 print("Amount : ")
