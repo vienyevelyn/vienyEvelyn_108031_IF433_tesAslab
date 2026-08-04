@@ -1,3 +1,4 @@
+
 fun main(){
     val bankUMN = Bank()
     println("Selamat datang di Bank UMN")
@@ -32,8 +33,10 @@ fun main(){
             println("Destination NIM : ")
             val destinationNim = readLine() ?: ""
             val receiver = bankUMN.findAccount(destinationNim)
-            
-            if (receiver != null){
+            if (receiver == user){
+                prinln("You can't transfer to your own account")
+            }
+            else if (receiver != null){
                 print("Amount : ")
                 val inputAmount : Int = readLine()?.toIntOrNull() ?: 0
                 if(user.transfer(receiver, inputAmount)){
@@ -57,7 +60,7 @@ fun main(){
                 println("Withdraw Success")
             }
             else{
-                println("Check your amount input")
+                println("Check your amount input. Can't withdraw all your money or more or minus")
             }
         }
         else if(choice == "3"){
