@@ -15,13 +15,9 @@ class Account(
         
         if (inputAmount > 0){
             balance += inputAmount
-            println("Desposit Success")
-            println("Your Balance ${balance}")
             return true
         }
         else{
-            println("Deposit Failed")
-            println("Your Balance ${balance}")
             return false
         }
         
@@ -31,13 +27,9 @@ class Account(
     fun withdraw(inputAmount : Int) : Boolean{
         if (inputAmount < balance){
             balance -= inputAmount
-            println("Withdraw Success")
-            println("Your Balance ${balance}")
             return true
         }
         else{
-            println("You can't withdraw all your money or more")
-            println("Your Balance ${balance}")
             return false
         }
         
@@ -47,13 +39,14 @@ class Account(
         val withdrawMoney = withdraw(inputAmount)
         if (withdrawMoney){
             receiver.deposit(inputAmount)
-            println("Transfer success")
             return true
         }
         else{
-            println("Transfer Failed")
             return false
         }
     }
     
+    fun showBalance(){
+        println("Your Current Balance: ${balance}")
+    }
 }
