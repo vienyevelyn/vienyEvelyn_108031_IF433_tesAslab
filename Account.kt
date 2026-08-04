@@ -25,7 +25,7 @@ class Account(
     }
     
     fun withdraw(inputAmount : Int) : Boolean{
-        if (inputAmount < balance){
+        if (inputAmount < balance && inputAmount > 0){
             balance -= inputAmount
             return true
         }
