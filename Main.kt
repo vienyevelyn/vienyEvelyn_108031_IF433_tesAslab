@@ -1,4 +1,3 @@
-
 fun main(){
     val bankUMN = Bank()
     println("Selamat datang di Bank UMN")
@@ -29,7 +28,7 @@ fun main(){
             break
         }
         
-        if (choice == "1"){
+        else if(choice == "1"){
             println("Destination NIM : ")
             val destinationNim = readLine() ?: ""
             val receiver = bankUMN.findAccount(destinationNim)
@@ -48,6 +47,32 @@ fun main(){
             else{
                 println("No account is found")
             }
+        }
+        
+        else if(choice == "2"){
+            print("Amount : ")
+            val inputAmount : Int = readLine()?.toIntOrNull() ?: 0
+            
+            if(user.withdraw(inputAmount)){
+                println("Withdraw Success")
+            }
+            else{
+                println("Check your amount input")
+            }
+        }
+        else if(choice == "3"){
+            print("Amount : ")
+            val inputAmount : Int = readLine()?.toIntOrNull() ?: 0
+            
+            if(user.deposit(inputAmount)){
+                println("Deposit Success")
+            }
+            else{
+                println("Check your amount input")
+            }
+        }
+        else{
+            println("Invalid Choice")
         }
         
     }
