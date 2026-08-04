@@ -6,6 +6,9 @@ class Bank{
         accounts.add(Account("Bandy", "0002", "02022006"))
         accounts.add(Account("Chonky", "0003", "03032006"))
     }
-    
+
+    fun findAccount(inputNim: String) : Account?{
+        return accounts.find { it.nim == inputNim }
+    }
 
 }
